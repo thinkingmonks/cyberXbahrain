@@ -100,7 +100,7 @@ a{
     transition: all ease .4s;
   }
   .navbar-container{
-    width: 90%;
+    width: 85%;
     height: auto;
     display: flex;
     justify-content: space-between;
@@ -160,11 +160,64 @@ a{
     border-radius: 50%;
     background: linear-gradient(to top,#690000,#f12b31);
     cursor: pointer;
+    animation: rotate1 infinite linear 3s;
   }
   .menu-btn{
     padding: .7vw;
     border-radius: 50%;
+    animation: rotate2 infinite linear 3s;
     background: linear-gradient(to left,#690000,#f12b31);
+  }
+  @keyframes rotate1 {
+    0%{
+      rotate: 0deg;
+    }100%{
+      rotate: 360deg;
+    }
+  }
+  @keyframes rotate2 {
+    0%{
+      rotate: 0deg;
+    }100%{
+      rotate: -360deg;
+    }
+  }
+  .nav-ul{
+    position: absolute;
+    margin: 0;
+    width: 12vw;
+    height: auto;
+    padding: 2vw;
+    border-radius: 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to left,#690000,#f12b31);
+    font-family: 'mona-sans narrow';
+    gap: 1vw;
+    top: 6vw;
+  }
+  .nav-ul li{
+    color: #fff;
+    font-size: 1.2vw;
+    list-style-type: none;
+  }
+  .menu-boxes i{
+    font-size: 1vw;
+  }
+  .nav-1{
+    display: none;
+    left: 6vw;
+  }
+  .nav-2{
+    display: none;
+    left: 10vw;
+    left: 19vw;
+  }
+  .nav-3{
+    display: none;
+    left: 26vw;
   }
   .hamburger {
     position: relative;
@@ -254,7 +307,7 @@ a{
     background: linear-gradient(to top, #000 10%, #000000c0 36%);
   }
   .hero-container{
-    width: 90%;
+    width: 85%;
     height: 80vh;
     z-index: 5;
     display: flex;
@@ -278,15 +331,13 @@ a{
   }
   .tag-span1{
     font-size: 5vw;
-    line-height: 5vw;
+    line-height: 4vw;
   }
   .tag-span2{
-    font-size: 4vw;
-    font-size: 4vw;
+    font-size: 3.3vw;
   }
   .tag-span3{
-    font-size: 3vw;
-    font-size: 3vw;
+    font-size: 3.3vw;
   }
   .numbers-container{
     display: flex;
@@ -415,6 +466,7 @@ a{
     border-radius: 1vw;
     font-size: 1.2vw;
     color: #fff;
+    background: #dadada;
     font-family: 'Mona-Sans Narrow Black';
     border: none;
     cursor: pointer;
@@ -425,6 +477,12 @@ a{
   }
   .hb1:hover{
     background: linear-gradient(to left,#f12b31,#690000);
+  }
+  .hero-btn:hover{
+    transform: translateY(-2px);
+  }
+  .hb2:hover{
+    background: #fff;
   }
   .hb2 span{
     background: linear-gradient(to right, #f12b31, #690000 );
@@ -447,8 +505,15 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4vw;
+    font-size: 1.3vw;
+    padding: 2px;
     background-color: #fff;
+    transition: all ease .4s;
+  }
+  .s-logo:hover{
+    transform: translateY(-2px);
+    background-color: #f12b31;
+    color: #fff;
   }
   /* countdown */
   .countdown{
@@ -547,7 +612,7 @@ a{
   .overview-container {
     display: flex;
     flex-direction: row-reverse;
-    width: 90%;
+    width: 85%;
     gap: 3vw;
     z-index: 1;
   }
@@ -594,6 +659,9 @@ a{
   .over-small-patch {
     width: 50%;
   }
+  .over-small-patch:hover img{
+    scale: 1.05;
+  }
   .over-high-big {
     display: flex;
     height: 50%;
@@ -603,13 +671,18 @@ a{
   .over-big-patch {
     width: 100%;
   }
+  .over-big-patch:hover img{
+    scale: 1.05;
+  }
   .over-high-img {
     height: 33vh;
+    overflow: hidden;
   }
   .over-high-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: all ease .4s;
   }
   .over-high-text {
     font-family: 'Mona-Sans Narrow';
@@ -669,7 +742,7 @@ a{
   display: flex;
   height: auto;
   gap: 2vw;
-  width: 90%;
+  width: 85%;
 }
 .keynote-left {
   display: flex;
@@ -787,6 +860,7 @@ a{
   position: absolute;
   width: 100%;
   z-index: 0;
+  transition: all ease .4s;
 }
 .f-patch{
   position: absolute;
@@ -794,6 +868,9 @@ a{
   height: 100%;
   z-index: 1;
   background: linear-gradient(to top, #000, #00000061 34%);
+}
+.feature-box:hover .feature-img {
+  transform: scale(1.05);
 }
 .feature-name{
   font-family: 'Mona-Sans Narrow';
@@ -928,7 +1005,7 @@ a{
   background-color: #000;
 }
 .attend-container{
-  width: 90%;
+  width: 85%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1043,7 +1120,7 @@ a{
     padding: 3vw 0;
   }
   .delegate-container{
-    width: 90%;
+    width: 85%;
     display: flex;
     flex-direction: column;
     gap: 2vw;
@@ -1074,6 +1151,9 @@ a{
     mask-size: cover;
     mask-repeat: no-repeat;   
   }
+  .delegate-box:hover img{
+    scale: 1.05;
+  }
   .del-patch{
     position: absolute;
     width: 100%;
@@ -1086,6 +1166,7 @@ a{
     width: 100%;
     top: -4vw;
     z-index: 0;
+    transition: all ease .4s;
   }
   .d-name{
     font-size: 3.2vw;
@@ -1123,7 +1204,8 @@ a{
       align-items: center;
       justify-content: center;
       height: auto;
-      gap: 1vw;
+      gap: 2vw;
+      padding: 3vw 0;
     }
     .advisory-heading {
       font-family: 'Mona-Sans Narrow Black';
@@ -1132,14 +1214,14 @@ a{
     }
     .advisory-container {
       display: flex;
-     width: 90%;
+     width: 85%;
      align-items: center;
      justify-content: space-between;
      flex-wrap: wrap;
      gap: 5vw;
     }
     .advisory-box {
-      width: 25vw;
+      width: 24vw;
       height: 33vw;
       display: flex;
       flex-direction: column;
@@ -1179,6 +1261,10 @@ a{
       top: 9vw;
       box-shadow: 0px 0px 168px 75px #cdcdcd7d;
       z-index: 0;
+      transition: all ease .4s;
+    }
+    .advisory-box:hover .advisory-img:before {
+      box-shadow: 0px 0px 168px 75px #ffffff7d;
     }
     .advisory-name {
       font-family: 'Mona-Sans Narrow Bold';
@@ -1217,7 +1303,7 @@ a{
       justify-content: center;
       background-color: black;
       height: auto;
-      padding: 6vh 3vw;
+      padding: 6vh 0vw;
       overflow: hidden;
       gap: 1vw;
     }
@@ -1228,18 +1314,22 @@ a{
       color: white;
     }
     .spk-container {
-     width: 95%;
+     width: 85%;
      display: flex;
      flex-wrap: wrap;
      align-items: center;
+     gap: 2vw;
      justify-content: space-between;
     }
     .spk-box {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      justify-content: start;
       width: 15vw;
+      height: 26vw;
+      gap: .5vw;
       box-sizing: border-box;
     }
     .spk-img{
@@ -1249,6 +1339,23 @@ a{
       display: flex;
       align-items: end;
       justify-content: center;
+      margin-bottom: .5vw;
+    }
+    .spk-img:before{
+      position: absolute;
+      content: '';
+      width: 2vw;
+      height: 2vw;
+      border-radius: 50%;
+      background-color: #cdcdcd7d;
+      top: 5vw;
+      box-shadow: 0px 0px 68px 25px #cdcdcd7d;
+      z-index: 0;
+      transition: all ease .4s;
+    }
+    .spk-box:hover .spk-img:before{
+      
+      box-shadow: 0px 0px 68px 25px #ffffff7d;
     }
     .spk-img img {
       position: absolute;
@@ -1310,7 +1417,7 @@ a{
     height: 80%;
     width: 3px;
     background-color: #c11828;
-    right: -1vw;
+    right: 0;
     top: 1vw;
   }
   .view-all{
@@ -1318,6 +1425,7 @@ a{
     font-family: 'Mona-Sans Narrow Black';
     color: #c11828;
     line-height: 5vw;
+    margin-right: 1vw;
     text-align: end;
   }
     .speakerstab {
@@ -1370,11 +1478,10 @@ a{
     .agenda {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
+      align-items: center;
+      justify-content: center;
       background-color: black;
       height: auto;
-      padding: 0 3vw 3vw;
       overflow: hidden;
       gap: 1vw;
     }
@@ -1385,7 +1492,7 @@ a{
     }
     .agn-cont {
       display: flex;
-      width: 100%;
+      width: 85%;
       gap: 1vh;
     }
     .ag-page{
@@ -1393,7 +1500,18 @@ a{
       display: flex;
       flex-direction: column;
       gap: .5vw;
-      justify-content: center;
+      justify-content: start;
+    }
+    .ag-inv .agn-time{
+      background: #fff;
+      color: #000;
+    }
+    .ag-inv .agn-desc{
+      background: #c11828;
+      color: #fff;
+    }
+    .agn-desc p{
+      margin: 0;
     }
     .ag-button{
       width: 14vw;
@@ -1406,8 +1524,13 @@ a{
       border-radius: 1vw;
       font-size: 1.5vw;
       align-self: center;
-      margin-top: 1.5vw;
+      margin-top: 1vw;
       background: linear-gradient(to right,#f12b31,#690000);
+      transition: all ease .4s;
+    }
+    .ag-button:hover{
+      transform: translateY(-2px);
+      background: linear-gradient(to left,#f12b31,#690000);
     }
     .agn-box {
       display: flex;
@@ -1417,16 +1540,20 @@ a{
       font-size: 1vw;
       background-color: #c11828;
       color: #d9d9d9;
-      width: 15%;
-      padding: 2vw;
+      width: 25%;
+      padding: 2vw 0;
+      display: flex;
+      justify-content: center;
     }
     .agn-desc {
       display: flex;
       flex-direction: column;
-      background-color: #d9d9d9;
+      background-color: #fff;
       color: black;
-      width: 85%;
-      padding: 2vw;
+      width: 75%;
+      padding:  2vw;
+      align-items: start;
+      justify-content: center;
     }
     .desc-main {
       font-family: 'Mona-Sans Bold';
@@ -1441,7 +1568,7 @@ a{
       gap: .5vw;
     }
     .agn-desc>p{
-      padding: 1vw 0;
+      padding: 0.5vw 0;
       margin: 0;
       font-family: 'Mona-Sans';
       font-size: .9vw;
@@ -1560,12 +1687,12 @@ a{
       justify-content: center;
       background-color: black;
       height: auto;
-      padding: 0 3vw 3vw;
       overflow: hidden;
       gap: 1vw;
+      padding: 4vw 0;
     }
     .spon-container{
-      width: 90%;
+      width: 85%;
       display: flex;
       flex-wrap: wrap;
       gap: 2vw;
@@ -1637,7 +1764,8 @@ a{
       background-color: white;
     }
     .media .spon-boxes{
-      gap: 2vw;
+      gap: 3vw;
+      padding: 4vw;
     }
 
     .media .spon-box img{
@@ -1747,9 +1875,10 @@ a{
       text-decoration: none;
     }
     .logo-text {
-      font-family: 'Mona-Sans Narrow';
-      font-size: 1vw;
+      font-family: 'Mona-Sans';
+      font-size: 0.9vw;
       color: White;
+      margin-left: 2.1vw;
     }
     .logo-img img {
       width: 10vw;
@@ -1806,7 +1935,10 @@ a{
       border-radius: 1vw;
       filter: grayscale(1);
       background-repeat: no-repeat;
-
+      transition: all ease .4s;
+    }
+    .map-cont:hover{
+      filter: grayscale(0.6);
     }
     .footer-box1 {
       display: flex;
@@ -1862,70 +1994,35 @@ a{
 
     /* Hero Section */
     .hero {
-      height: auto;
+      height: 100vh;
       padding: 13vh 0vw;
     }
     .hero-container {
-      height: 100%;
+      height: 100%; 
+      justify-content: center;
     }
-    .logo-container {
-      display: flex;
+    .tag-line-cont {
+      justify-content: center;
+      align-items: start;
       flex-direction: column;
-      align-items: center;
-      gap: 2vw;
-    }
-    .logo {
-      width: 60vw;
-    }
-    .logo-cpd {
-     width: 30vw;
-     padding-top: 1vh;
-    }
-    .line {
-      width: 0vw;
-    }
-    .logo-container-text {
-      align-items: center;
-    }
-    .text1 {
-      font-size: 6vw;
-    }
-    .text2 {
-      font-size: 3vw;
-      text-align: center;
-    }
-    .tagline {
-      font-size: 7vw;
-      text-align: center;
-      width: 70%;
-      line-height: 1;
-    }
-    .date {
-      font-size: 5vw;
-      text-align: center;
-      width: 50%;
-    }
-    .buttons {
-      display: flex;
-      flex-direction: column;
-    }
-    .button {
-      width: 150px;
-      height: 50px;
-      font-size: 3vw;
-    }
-    .after-movie {
-      padding-top: 3vh;
-    }
-    .play-button {
-      width: 15vw;
-    }
-    .text3 {
-      font-size: 7vw;
-    }
-    .text4 {
-      font-size: 4vw;
-    }
+  }
+  .tag-span1 {
+    font-size: 8vw;
+    line-height: 8vw;
+}
+.tag-span2 {
+  font-size: 5.6vw;
+  line-height: 6vw;
+}
+.tag-span3 {
+  font-size: 5.6vw;
+  line-height: 6vw;
+}
+.count-b {
+  width: 10vw;
+  height: 10vw;
+}
+   
 
     /* Overview Section */
     .overview {
@@ -1933,21 +2030,22 @@ a{
     }
     .overview-container {
       flex-direction: column;
-      padding: 6vw;
-      gap: 6vw;
     }
     .over-cont-right {
       order: 1;
       gap: 2vh;
+      width: 100%;
     }
     .over-cont-left {
       order: -1;
+      width: 100%;
     }
     .over-heading {
       font-size: 10vw;
     }
     .over-desc {
-      font-size: 3vw;
+      font-size: 3.4vw;
+      line-height: 4vw;
     }
     .over-desc p {
       margin-bottom: 2vh;
@@ -1963,7 +2061,13 @@ a{
       font-size: 7vw;
       padding: 1vw;
     }
-
+    .over-high-small {
+      width: 100%;
+      flex-direction: column;
+    }
+    .over-small-patch {
+      width: 100%;
+  }
     /* Highlights Section */
     .highlights {
       height: auto;
@@ -2112,18 +2216,70 @@ a{
     }
     .keynote-right {
       width: 90%;
+      gap: 0;
     }
     .keynote-right p {
-      font-size: 4vw;
+      font-size: 3.4vw;
+      line-height: 4.5vw;
       padding-bottom: 1vh;
       text-align: center;
     }
     .keynote-right ul {
-      font-size: 2.5vw;
-      margin-top: -1.5vh;
+      font-size: 3.4vw;
+      line-height: 4vw;
       text-align: center;
       list-style-position: inside;
     }
+    /* features */
+    .feature-box {
+      position: relative;
+      width: 50%;
+      height: 35vw;
+    }
+    .feature-name {
+      font-size: 4vw;
+      line-height: 4.2vw;
+    }
+    .feature-head {
+      font-size: 10vw;
+    }
+    /* who attends */
+    .att-name {
+      font-size: 4vw;
+    }
+    .attend-head {
+      font-size: 10vw;
+    }
+    .t-box {
+      width: 49.5%;
+      height: 30vw;
+      gap: 2vw;
+    }
+    .t-des {
+      font-size: 3.4vw;
+      line-height: 3.6vw;
+    }
+    .job-box {
+      width: 32.85%;
+      height: 30vw;
+    }
+    .j-des {
+      font-size: 3.4vw;
+      height: 3.5vw;
+    }
+    .delegate-head {
+      font-size: 10vw;
+      text-align: center;
+    }
+    .delegate-box {
+      width: 100%;
+      height: 50vw;
+    }
+    .d-name {
+      font-size: 6.2vw;
+      line-height: 6.2vw;
+    }
+
 
     /* Advisory Panel Section */
     .advisory {

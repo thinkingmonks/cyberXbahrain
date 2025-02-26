@@ -24,10 +24,88 @@ document.addEventListener("DOMContentLoaded", function () {
       document.addEventListener("click", function (event) {
           if (!menuContainer.contains(event.target) && !menuSuper.contains(event.target)) {
               menuContainer.classList.remove("menu-active");
+              document.querySelector(".hamburger").classList.toggle("is-active");
           }
       });
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuItems = [
+      { trigger: ".nv1", dropdown: ".nav-1" },
+      { trigger: ".nv2", dropdown: ".nav-2" },
+      { trigger: ".nv3", dropdown: ".nav-3" }
+  ];
+
+  let activeDropdown = null; // Track the active dropdown
+  let timeout;
+
+  menuItems.forEach(({ trigger, dropdown }) => {
+      const triggerEl = document.querySelector(trigger);
+      const dropdownEl = document.querySelector(dropdown);
+
+      // Show dropdown and hide others on hover
+      triggerEl.addEventListener("mouseenter", function () {
+          clearTimeout(timeout);
+          closeAllDropdowns(); // Hide all dropdowns before showing the new one
+          dropdownEl.style.display = "flex";
+      });
+
+      dropdownEl.addEventListener("mouseenter", function () {
+          clearTimeout(timeout); // Prevent hiding when hovering over the dropdown
+      });
+
+      // Hide dropdown after 1 second when leaving the link
+      triggerEl.addEventListener("mouseleave", function () {
+          timeout = setTimeout(() => {
+              if (dropdownEl !== activeDropdown) {
+                  dropdownEl.style.display = "none";
+              }
+          }, 1000);
+      });
+
+      // Hide dropdown after 1 second when leaving the dropdown itself
+      dropdownEl.addEventListener("mouseleave", function () {
+          timeout = setTimeout(() => {
+              if (dropdownEl !== activeDropdown) {
+                  dropdownEl.style.display = "none";
+              }
+          }, 1000);
+      });
+
+      // Toggle active dropdown on click
+      triggerEl.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent default link behavior
+          if (activeDropdown === dropdownEl) {
+              dropdownEl.style.display = "none";
+              activeDropdown = null;
+          } else {
+              closeAllDropdowns();
+              dropdownEl.style.display = "flex";
+              activeDropdown = dropdownEl;
+          }
+      });
+  });
+
+  // Close all dropdowns except the active one
+  function closeAllDropdowns() {
+      menuItems.forEach(({ dropdown }) => {
+          const dropdownEl = document.querySelector(dropdown);
+          if (dropdownEl !== activeDropdown) {
+              dropdownEl.style.display = "none";
+          }
+      });
+  }
+
+  // Close dropdowns when clicking outside
+  document.addEventListener("click", function (event) {
+      if (!event.target.closest(".menu-boxes a, .nav-ul")) {
+          closeAllDropdowns();
+          activeDropdown = null;
+      }
+  });
+});
+
 
 // Navbar Scroll Behavior
 document.addEventListener('scroll', () => {
