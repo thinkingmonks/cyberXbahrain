@@ -521,6 +521,7 @@ a{
     padding: 2px;
     background-color: #fff;
     transition: all ease .4s;
+    color: #000;
   }
   .s-logo:hover{
     transform: translateY(-2px);
