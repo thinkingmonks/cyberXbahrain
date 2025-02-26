@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.addEventListener("click", function (event) {
           if (!menuContainer.contains(event.target) && !menuSuper.contains(event.target)) {
               menuContainer.classList.remove("menu-active");
-              document.querySelector(".hamburger").classList.toggle("is-active");
+              document.querySelector(".hamburger").classList.remove("is-active");
           }
       });
   }
