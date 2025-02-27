@@ -1019,28 +1019,36 @@ a{
 }
 .attend-container{
   width: 85%;
+  flex-wrap: wrap;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 2vw;
+  justify-content: space-between;
 }
 .attend-head{
-  font-size: 5vw;
-  font-family: 'Mona-Sans Narrow Black';
-  color: #fff;
+    width: 100%;
+    text-align: center;
+    font-size: 5vw;
+    font-family: 'Mona-Sans Narrow Black';
+    color: #fff;
 }
 .att-name{
+  width: 100%;
   font-family: 'Mona-Sans Narrow';
   font-size: 2.3vw;
   color: #fff;
 }
 .target-cont{
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1vw;
   justify-content: center;
+}
+.tc1{
+  width: 40%;
+}
+.tc2{
+  width: 58%;
 }
 .target-boxes{
   width: 100%;
@@ -1049,8 +1057,8 @@ a{
   flex-wrap: wrap;
 }
 .t-box{
-  width: 33.2%;
-  height: 18vw;
+  width: 11vw;
+  height: 11vw;
   display: flex;
   gap: .5vw;
   flex-direction: column;
@@ -1060,17 +1068,21 @@ a{
   transition: all ease .4s;
 }
 .t-icon{
-  width: 25%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .t-icon svg{
   fill: #f12b31;
+  width: 65%;
   transition: all ease .4s;
 }
 .t-des{
   font-family: 'mona-sans narrow';
   color: white;
-  font-size: 1.8vw;
-  line-height: 2vw;
+  font-size: 1.2vw;
+  line-height: 1.2vw;
   text-align: center;
 }
 .t-box:hover{
@@ -1086,13 +1098,13 @@ a{
   width: 100%;
 }
 .job-box{
-  width: 19.85%;
-  height: 18vw;
+  width: 9.64vw;
+  height: 11vw;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 1vw;
+  gap: .1vw;
   border: 1px solid #f12b31;
   transition: all ease .4s;
 }
@@ -1105,13 +1117,13 @@ a{
 }
 .j-icon{
   width: 50%;
-  height: 50%;
+  height: 45%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .j-icon svg{
-  width: 80%;
+  width: 65%;
   fill: #f12b31;
   transition: all ease .4s;
 }
@@ -1119,7 +1131,7 @@ a{
   width: 70%;
   text-align: center;
   color: #fff;
-  font-size: 1.6vw;
+  font-size: 1.2vw;
   height: 3.5vw;
   font-family: 'mona-sans narrow';
 }
@@ -1509,11 +1521,21 @@ a{
       gap: 1vh;
     }
     .ag-page{
+      position: relative;
       width: 50%;
       display: flex;
       flex-direction: column;
       gap: .5vw;
       justify-content: start;
+    }
+    .ag-blur{
+      position: absolute;
+      width: 100%;
+      height: 30vw;
+      bottom: 6.5vw;
+      left: 0;
+      backdrop-filter: blur(2px);
+      background: linear-gradient(to top,#000,#00000000);
     }
     .ag-inv .agn-time{
       background: #fff;
@@ -1658,7 +1680,7 @@ a{
     .pb2{
       background: url(../images/Keynote.png);
       background-size: cover;
-      background-position: right;
+      background-position: left;
     }
     .pb3{
       background: url(../images/exhibition.png);
@@ -2431,11 +2453,17 @@ a{
     }
     /* who attends */
     .att-name {
-      font-size: 4vw;
+      font-size: 6vw;
+    }
+    .attend-container {
+      gap: 5vw;
     }
     .attend-head {
       font-size: 10vw;
     }
+    .tc1,.tc2 {
+      width: 100%;
+  }
     .t-box {
       width: 49.5%;
       height: 30vw;
@@ -2446,7 +2474,7 @@ a{
       line-height: 3.6vw;
     }
     .job-box {
-      width: 32.85%;
+      width: 48.85%;
       height: 30vw;
     }
     .j-des {
@@ -2464,6 +2492,7 @@ a{
     .d-name {
       font-size: 6.2vw;
       line-height: 6.2vw;
+      margin: 0 0 7vw 6vw;
     }
 
 
@@ -2483,6 +2512,11 @@ a{
       height: 100%;
       gap: 16vw;
     }
+    
+    .advisory-img:before, .spk-img:before {
+      top: 24vw;
+      box-shadow: 0px 0px 67px 55px #cdcdcd7d;
+  }
     .advisory-box {
       align-items: center;
       height: auto;
@@ -2601,6 +2635,10 @@ a{
     .ag-page {
       width: 100%;
     }  
+    .ag-blur {
+      height: 120vw;
+      bottom: 8vw;
+    }
     .agn-time {
       font-size: 3vw;
       width: 30%;
@@ -2672,7 +2710,7 @@ a{
       height: 20vw;
   }
   .spon5 .spon-box {
-    width: 30.5%;
+    width: 32.8%;
     height: 20vw;
 }
 .spon-split .spon-box {
@@ -2759,6 +2797,7 @@ a{
     }
     .social-box {
       padding: 4vw;
+      font-size: 5vw;
     }
     .footer-box3 {
       font-size: 2vw;
@@ -3199,11 +3238,17 @@ a{
     .att-name {
       font-size: 4vw;
     }
+    .attend-container {
+      gap: 4vw;
+    }
     .attend-head {
       font-size: 10vw;
     }
+    .tc1,.tc2 {
+      width: 100%;
+    }
     .t-box {
-      width: 49.5%;
+      width: 28vw;
       height: 30vw;
       gap: 2vw;
     }
@@ -3216,7 +3261,7 @@ a{
       height: 30vw;
     }
     .j-des {
-      font-size: 3.4vw;
+      font-size: 2.6vw;
       height: 3.5vw;
     }
     .delegate-head {
@@ -3278,7 +3323,6 @@ a{
       text-align: center;
       width: 80%;
     }
-
     /* Speakers Section */
     .speakers {
       height: auto;
@@ -3367,6 +3411,10 @@ a{
     .ag-page {
       width: 100%;
     }  
+    .ag-blur {
+      height: 90vw;
+      bottom: 6.5vw;
+    }
     .agn-time {
       font-size: 3vw;
       width: 30%;
