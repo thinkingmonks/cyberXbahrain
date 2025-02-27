@@ -1531,7 +1531,7 @@ a{
     .ag-blur{
       position: absolute;
       width: 100%;
-      height: 30vw;
+      height: 45vw;
       bottom: 6.5vw;
       left: 0;
       backdrop-filter: blur(2px);
